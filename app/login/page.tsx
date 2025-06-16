@@ -104,12 +104,13 @@ export default function Home() {
       />
       <Overlay>
         <Heading>Welcome to Apollo Adlux Hospital</Heading>
-        <Paragraph>
-          At Apollo Adlux Hospital, we offer world-class healthcare services with a commitment to providing
-          compassionate and advanced medical care. Our expert team of doctors and state-of-the-art facilities
-          ensure that you receive the best treatment for your health and wellness needs. Whether you're seeking
-          routine check-ups or specialized treatments, we are here to support your health journey every step of the way.
-        </Paragraph>
+     <Paragraph>
+  At Apollo Adlux Hospital, we offer world-class healthcare services with a commitment to providing
+  compassionate and advanced medical care. Our expert team of doctors and state-of-the-art facilities
+  ensure that you receive the best treatment for your health and wellness needs. Whether you&#39;re seeking
+  routine check-ups or specialized treatments, we are here to support your health journey every step of the way.
+</Paragraph>
+
         <BtnContainer>
           <Link href="/login1" passHref>
             <LoginBtn>

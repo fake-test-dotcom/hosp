@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Link from 'next/link';
+import Image from 'next/image';
 import { FaHeartbeat, FaUserMd, FaHospital, FaStethoscope, FaEye, FaUser, FaFacebook, FaTwitter, FaInstagram, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaEdit } from "react-icons/fa";
 
 // Styled-components
@@ -370,7 +371,7 @@ const ContactPage: React.FC = () => {
   return (
     <div>
       <Navbar>
-        <Logo><img src="https://www.apolloadluxhospital.co/assets/images/ApolloAdluxLogo.png" alt="logo" /></Logo>
+        <Logo><Image src="https://www.apolloadluxhospital.co/assets/images/ApolloAdluxLogo.png" alt="logo" /></Logo>
         <NavLinks>
           <Link href="/" passHref><StyledLink><FaHospital />Home</StyledLink></Link>
           <Link href="/about" passHref><StyledLink><FaUserMd />About</StyledLink></Link>
@@ -386,7 +387,7 @@ const ContactPage: React.FC = () => {
         <CarouselItem>
           <CarouselImage src="https://www.apolloadluxhospital.co/images/banner-images/banner-images34.jpg" alt="Slide 1" />
           <LargeHeading>Contact Us</LargeHeading>
-          <SmallHeading>We're Here to Help: Contact Us Today</SmallHeading>
+          <SmallHeading>We&#39;re Here to Help: Contact Us Today</SmallHeading>
         </CarouselItem>
       </CarouselContainer>
 

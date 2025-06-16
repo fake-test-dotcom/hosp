@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import styled from 'styled-components';
 import {
   FaHospital, FaCamera, FaCheck, FaTimes, FaArrowLeft, FaUser,
@@ -90,9 +91,19 @@ const ContactItem = styled.div`
   gap: 10px;
 `;
 
+
+interface Appointment {
+  _id: string;
+  date: string;
+  time: string;
+  prescription?: string;
+  by?: string;
+}
+
 const Atable: React.FC = () => {
-  const [users, setUsers] = useState<any[]>([]);
+  const [users, setUsers] = useState<Appointment[]>([]);
   const [hoveredRow, setHoveredRow] = useState<number | null>(null);
+
 
   useEffect(() => {
     // Static mock data (replaces backend API)
@@ -115,10 +126,7 @@ const Atable: React.FC = () => {
     setUsers(fakeAppointments);
   }, []);
 
-  const handleDelete = (id: string) => {
-    setUsers(users.filter((user) => user._id !== id));
-  };
-
+ 
   const handleRemovePrescription = (userId: string) => {
     setUsers((prevUsers) =>
       prevUsers.map((user) =>
@@ -132,7 +140,7 @@ const Atable: React.FC = () => {
       {/* Navbar */}
       <Navbar>
         <Logo>
-          <img src="https://www.apolloadluxhospital.co/assets/images/ApolloAdluxLogo.png" alt="logo" />
+          <Image src="https://www.apolloadluxhospital.co/assets/images/ApolloAdluxLogo.png" alt="logo" />
         </Logo>
         <NavLinks>
           <Link href="/dhome" passHref>

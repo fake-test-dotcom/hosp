@@ -1,7 +1,8 @@
 'use client';
 import Link from 'next/link';
+import Image from 'next/image';
 import styled from "styled-components";
-import { FaEdit,FaHeartbeat, FaHospital,FaUsers, FaStethoscope,FaEye , FaUser, FaHospitalAlt, FaUserMd, FaFacebook, FaTwitter, FaInstagram, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { FaEdit,FaHeartbeat, FaHospital,FaUsers, FaStethoscope,FaEye , FaUser, FaUserMd } from "react-icons/fa";
 const Navbar = styled.nav`
   display: flex;
   justify-content: space-between;
@@ -167,7 +168,7 @@ export default function Home() {
     <div>
     <Navbar>
       <Logo>
-        <img src="https://www.apolloadluxhospital.co/assets/images/ApolloAdluxLogo.png" alt="logo" />
+        <Image src="https://www.apolloadluxhospital.co/assets/images/ApolloAdluxLogo.png" alt="logo" />
       </Logo>
       <NavLinks>
         <li>
@@ -223,7 +224,7 @@ export default function Home() {
         <p style={styles.paragraph}>
           At Apollo Adlux Hospital, we offer world-class healthcare services with a commitment to providing
           compassionate and advanced medical care. Our expert team of doctors and state-of-the-art facilities
-          ensure that you receive the best treatment for your health and wellness needs. Whether you're seeking
+          ensure that you receive the best treatment for your health and wellness needs. Whether you&#39;re seeking
           routine check-ups or specialized treatments, we are here to support your health journey every step of the way.
         </p>
         <div style={styles.btnContainer}>

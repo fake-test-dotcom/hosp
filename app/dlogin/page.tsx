@@ -1,18 +1,16 @@
 'use client';
 import Link from 'next/link';
+import Image from 'next/image';
 import { FaUser, FaLock, FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 import { useState, CSSProperties } from 'react';
 
 const Button = () => {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
-    const x = e.pageX - e.currentTarget.offsetLeft;
-    const y = e.pageY - e.currentTarget.offsetTop;
-    setPosition({ x, y });
-    e.currentTarget.style.setProperty('--x', `${x}px`);
-    e.currentTarget.style.setProperty('--y', `${y}px`);
-  };
+const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const x = e.pageX - e.currentTarget.offsetLeft;
+  const y = e.pageY - e.currentTarget.offsetTop;
+  e.currentTarget.style.setProperty('--x', `${x}px`);
+  e.currentTarget.style.setProperty('--y', `${y}px`);
+};
 
   const buttonStyle: CSSProperties = {
     position: 'relative',
@@ -164,7 +162,7 @@ export default function Login2() {
 
   return (
     <div style={styles.mainContainer}>
-      <img
+      <Image
         src="https://www.apolloadluxhospital.co/assets/images/ApolloAdluxLogo.png"
         alt="Apollo Adlux Hospital Logo"
         style={styles.logo}
@@ -200,7 +198,7 @@ export default function Login2() {
           </div>
           <Button />
           <div style={styles.signupText}>
-            Don't have an account? <Link href="/signup" style={styles.signupLink}>Sign Up</Link>
+            Don&#39;t have an account? <Link href="/signup" style={styles.signupLink}>Sign Up</Link>
           </div>
           <div style={styles.signupText}>or</div>
           <div style={styles.signupText}>

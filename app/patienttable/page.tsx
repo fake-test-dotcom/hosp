@@ -1,9 +1,31 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import axios from 'axios';
+import Image from 'next/image';
 import styled from 'styled-components';
-import { FaHeartbeat, FaUserMd, FaHospital, FaStethoscope, FaUser, FaFacebook, FaTwitter, FaInstagram, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaEdit } from 'react-icons/fa';
+import {
+  FaHeartbeat,
+  FaUserMd,
+  FaHospital,
+  FaStethoscope,
+  FaUser,
+  FaFacebook,
+  FaTwitter,
+  FaInstagram,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaEdit
+} from 'react-icons/fa';
+
+// Types
+type Patient = {
+  name: string;
+  gender: string;
+  dob: string;
+  phone: string;
+  email: string;
+};
 
 // Navbar Styles
 const Navbar = styled.nav`
@@ -88,14 +110,14 @@ const ContactItem = styled.div`
 
 // Main Component
 const Ptable: React.FC = () => {
-  const [users, setUsers] = useState<any[]>([]); // Define the users state to hold API response data
+  const [users, setUsers] = useState<Patient[]>([]);
   const [hoveredRow, setHoveredRow] = useState<number | null>(null);
 
   useEffect(() => {
-    axios
-      .get('http://localhost:5000/api/patient') // Replace with your actual API endpoint
-      .then((response) => {
-        setUsers(response.data); // Populate users state with data from API
+    fetch('http://localhost:5000/api/patient')
+      .then((res) => res.json())
+      .then((data: Patient[]) => {
+        setUsers(data);
       })
       .catch((error) => console.error('Error fetching users:', error));
   }, []);
@@ -105,31 +127,33 @@ const Ptable: React.FC = () => {
       {/* Navbar */}
       <Navbar>
         <Logo>
-          <img src="https://www.apolloadluxhospital.co/assets/images/ApolloAdluxLogo.png" alt="logo" />
+          <Image src="https://www.apolloadluxhospital.co/assets/images/ApolloAdluxLogo.png" alt="logo" width={100} height={40} />
         </Logo>
         <NavLinks>
           <Link href="/" passHref>
             <StyledLink>
-              <FaHospital style={{ fontSize: '20px', marginRight: '2px' }} /> Home
+              <FaHospital style={{ fontSize: '20px' }} /> Home
             </StyledLink>
           </Link>
           <Link href="/about" passHref>
             <StyledLink>
-              <FaUserMd style={{ fontSize: '20px', marginRight: '2px' }} />About
+              <FaUserMd style={{ fontSize: '20px' }} /> About
             </StyledLink>
           </Link>
           <Link href="/services" passHref>
             <StyledLink>
-              <FaStethoscope style={{ fontSize: '20px', marginRight: '2px' }} />Services
+              <FaStethoscope style={{ fontSize: '20px' }} /> Services
             </StyledLink>
           </Link>
           <Link href="/register" passHref>
-            <StyledLink><FaEdit style={{ marginLeft: '-2px', fontSize: '20px', marginTop: '-2px' }} />Register </StyledLink>
+            <StyledLink>
+              <FaEdit style={{ fontSize: '20px' }} /> Register
+            </StyledLink>
           </Link>
-          <li style={{ color: 'green' }}><FaHeartbeat style={{ marginLeft: '22px' }} /> Join us</li>
+          <li style={{ color: 'green' }}><FaHeartbeat /> Join us</li>
           <Link href="/login" passHref>
             <StyledLink>
-              <FaUser style={{ fontSize: '20px', marginRight: '2px' }} />Login
+              <FaUser style={{ fontSize: '20px' }} /> Login
             </StyledLink>
           </Link>
         </NavLinks>
@@ -138,8 +162,7 @@ const Ptable: React.FC = () => {
       {/* Main Content */}
       <div style={{ padding: '20px', textAlign: 'center' }}>
         <h1 style={{ fontSize: '3rem', marginBottom: '20px', color: 'black', fontWeight: 'bolder' }}>Patients list</h1>
-        
-        {/* Table to display patient details */}
+
         <table
           style={{
             width: '100%',
@@ -150,21 +173,11 @@ const Ptable: React.FC = () => {
         >
           <thead>
             <tr>
-              <th style={{ backgroundColor: 'grey', padding: '10px', textAlign: 'left' }}>
-                Full Name
-              </th>
-              <th style={{ backgroundColor: 'grey', padding: '10px', textAlign: 'left' }}>
-                Gender
-              </th>
-              <th style={{ backgroundColor: 'grey', padding: '10px', textAlign: 'left' }}>
-                Date of Birth
-              </th>
-              <th style={{ backgroundColor: 'grey', padding: '10px', textAlign: 'left' }}>
-                Phone
-              </th>
-              <th style={{ backgroundColor: 'grey', padding: '10px', textAlign: 'left' }}>
-                Email
-              </th>
+              <th style={{ backgroundColor: 'grey', padding: '10px', textAlign: 'left' }}>Full Name</th>
+              <th style={{ backgroundColor: 'grey', padding: '10px', textAlign: 'left' }}>Gender</th>
+              <th style={{ backgroundColor: 'grey', padding: '10px', textAlign: 'left' }}>Date of Birth</th>
+              <th style={{ backgroundColor: 'grey', padding: '10px', textAlign: 'left' }}>Phone</th>
+              <th style={{ backgroundColor: 'grey', padding: '10px', textAlign: 'left' }}>Email</th>
             </tr>
           </thead>
           <tbody>
@@ -172,56 +185,20 @@ const Ptable: React.FC = () => {
               <tr
                 key={index}
                 style={{
-                  backgroundColor: '#f9f9f9',
-                  ...(hoveredRow === index ? { backgroundColor: '#f1f1f1' } : {}),
+                  backgroundColor: hoveredRow === index ? '#f1f1f1' : '#f9f9f9',
                 }}
                 onMouseEnter={() => setHoveredRow(index)}
                 onMouseLeave={() => setHoveredRow(null)}
               >
-                <td style={{ padding: '10px', textAlign: 'left', border: '1px solid #ddd', color: 'black' }}>
-                  {user.name}
-                </td>
-                <td style={{ padding: '10px', textAlign: 'left', border: '1px solid #ddd', color: 'black' }}>
-                  {user.gender}
-                </td>
-                <td style={{ padding: '10px', textAlign: 'left', border: '1px solid #ddd', color: 'black' }}>
-                  {user.dob}
-                </td>
-                <td style={{ padding: '10px', textAlign: 'left', border: '1px solid #ddd', color: 'black' }}>
-                  {user.phone}
-                </td>
-                <td style={{ padding: '10px', textAlign: 'left', border: '1px solid #ddd', color: 'black' }}>
-                  {user.email}
-                </td>
+                <td style={{ padding: '10px', border: '1px solid #ddd', color: 'black' }}>{user.name}</td>
+                <td style={{ padding: '10px', border: '1px solid #ddd', color: 'black' }}>{user.gender}</td>
+                <td style={{ padding: '10px', border: '1px solid #ddd', color: 'black' }}>{user.dob}</td>
+                <td style={{ padding: '10px', border: '1px solid #ddd', color: 'black' }}>{user.phone}</td>
+                <td style={{ padding: '10px', border: '1px solid #ddd', color: 'black' }}>{user.email}</td>
               </tr>
             ))}
           </tbody>
         </table>
-
-        
-
-        {/* Stylish Register Button */}
-        {/* <div style={{ marginTop: '20px' }}>
-          <Link href="/patient" passHref>
-            <button
-              style={{
-                backgroundColor: '#4CAF50',
-                color: 'white',
-                padding: '15px 32px',
-                fontSize: '16px',
-                fontWeight: 'bolder',
-                border: 'none',
-                borderRadius: '30px',
-                cursor: 'pointer',
-                transition: 'background-color 0.3s ease',
-              }}
-              onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#45a049'}
-              onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#4CAF50'}
-            >
-              Register
-            </button>
-          </Link>
-        </div> */}
       </div>
 
       {/* Footer */}

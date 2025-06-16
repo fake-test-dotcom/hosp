@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import styled from 'styled-components';
 import { FaCamera, FaTimes, FaArrowLeft, FaUser, FaHospital, FaFacebook, FaTwitter, FaInstagram, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
@@ -83,10 +84,16 @@ const ContactItem = styled.div`
   align-items: center;
   gap: 10px;
 `;
+interface Appointment {
+  _id: string;
+  date: string;
+  time: string;
+  prescription: string;
+}
 
 // Main Component
 const Ptable: React.FC = () => {
-  const [users, setUsers] = useState<any[]>([]);
+const [users, setUsers] = useState<Appointment[]>([]);
   const [hoveredRow, setHoveredRow] = useState<number | null>(null);
 
   useEffect(() => {
@@ -121,7 +128,7 @@ const Ptable: React.FC = () => {
     <div>
       <Navbar>
         <Logo style={{ boxShadow: '2px 8px 12px black', borderRadius: '100px' }}>
-          <img src="https://www.apolloadluxhospital.co/assets/images/ApolloAdluxLogo.png" alt="logo" />
+          <Image src="https://www.apolloadluxhospital.co/assets/images/ApolloAdluxLogo.png" alt="logo" />
         </Logo>
         <NavLinks>
           <Link href="/" passHref>

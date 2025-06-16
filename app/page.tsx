@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect, useState, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import styled from 'styled-components';
 import { FaHeartbeat, FaUserMd,FaSearch, FaHospital,FaEye,FaList , FaStethoscope, FaUser,FaFacebook,FaTwitter,FaInstagram,FaEdit } from 'react-icons/fa';
 // Styled Link component
@@ -54,7 +55,7 @@ const HomePage = () => {
     <div>
       <nav className="navbar">
         <div className="logo">
-          <img style={{ width: '100px', height: 'auto' }} src="https://www.apolloadluxhospital.co/assets/images/ApolloAdluxLogo.png" alt="logo" />
+          <Image style={{ width: '100px', height: 'auto' }} src="https://www.apolloadluxhospital.co/assets/images/ApolloAdluxLogo.png" alt="logo" />
         </div>
         <ul className="nav-links">
           <li style={{ color: 'green' }}><FaHospital style={{ marginLeft: '18px' }} />Home</li>
@@ -84,13 +85,13 @@ const HomePage = () => {
 
       <div className="carousel">
         <div className="carousel-item">
-          <img src="https://www.apolloadluxhospital.co/images/sliders/desktop-slider-a0dTeVBkc3gzdlNLK2pYK1E5SG9HRG9Jdy85d2J1NUE2Ulc1QWFVMkU2ND0=.jpg" alt="Slide 1" />
+          <Image src="https://www.apolloadluxhospital.co/images/sliders/desktop-slider-a0dTeVBkc3gzdlNLK2pYK1E5SG9HRG9Jdy85d2J1NUE2Ulc1QWFVMkU2ND0=.jpg" alt="Slide 1" />
         </div>
         <div className="carousel-item">
-          <img src="https://www.apolloadluxhospital.co/images/sliders/desktop-slider-azh6SVZsWWEwS0JVdG02RTVTUHZ0Z0h4aDNlWElBZUYzakNJa3pvRlRuZz0=.jpg" alt="Slide 2" />
+          <Image src="https://www.apolloadluxhospital.co/images/sliders/desktop-slider-azh6SVZsWWEwS0JVdG02RTVTUHZ0Z0h4aDNlWElBZUYzakNJa3pvRlRuZz0=.jpg" alt="Slide 2" />
         </div>
         <div className="carousel-item">
-          <img src="https://www.apolloadluxhospital.co/images/sliders/desktop-slider-ZzZzY1gxdG1aby9SQzJwZ3FUUUdnWkRLcU1sVTlhUmJ3M0kxUEJZYXNXQT0=.jpeg" alt="Slide 3" />
+          <Image src="https://www.apolloadluxhospital.co/images/sliders/desktop-slider-ZzZzY1gxdG1aby9SQzJwZ3FUUUdnWkRLcU1sVTlhUmJ3M0kxUEJZYXNXQT0=.jpeg" alt="Slide 3" />
         </div>
       </div>
 
@@ -102,14 +103,14 @@ const HomePage = () => {
         <div className="right">
           <h3 style={{ color: 'black', fontWeight: 'bolder' }} className={`pop-up ${visible ? 'show' : ''}`}>Namaste,</h3>
           <p style={{ color: 'black' }} className={`pop-up ${visible ? 'show' : ''}`}>
-            Welcome to Apollo Adlux Hospital, Kerala's first Apollo hospital and <br />
-            Apollo's 73rd hospital in India. We are here to redefine the healthcare<br />
+            Welcome to Apollo Adlux Hospital, Kerala&#39;s first Apollo hospital and <br />
+            Apollo&#39;s 73rd hospital in India. We are here to redefine the healthcare<br />
             experience and standards of the people in this community. With our <br />
             highly skilled medical fraternity, state-of-the-art facility, and<br />
             professional management team, we are dedicated to providing<br />
             advanced medical care and treatment in a compassionate and<br />
             personalized manner. We look forward to serving you and your family <br />
-            with 3E’s - Excellence, Expertise, and Empathy.
+            with 3E&#39;s - Excellence, Expertise, and Empathy.
           </p>
         </div>
       </div>
@@ -131,7 +132,7 @@ const HomePage = () => {
               <p>24 Hour Services</p>
             </div>
           </div>
-          <img src="https://www.apolloadluxhospital.co/images/sliders/desktop-slider-V1hBcFhhQW5LWm5KcHBBdUl5QTNOVE5STVQ4QlhXVWdjMmIwaDVvTG1yST0=.webp" alt="Parallax Image" />
+          <Image src="https://www.apolloadluxhospital.co/images/sliders/desktop-slider-V1hBcFhhQW5LWm5KcHBBdUl5QTNOVE5STVQ4QlhXVWdjMmIwaDVvTG1yST0=.webp" alt="Parallax Image" />
         </div>
       </div>
 
@@ -152,32 +153,32 @@ const HomePage = () => {
     }}
   >
     <div className="card" style={{ flex: '0 0 auto' }}>
-      <img src="https://www.apolloadluxhospital.co/images/services/image44.jpeg" alt="Center 1" />
+      <Image src="https://www.apolloadluxhospital.co/images/services/image44.jpeg" alt="Center 1" />
       <h3>Heart Care</h3>
       <p>Leading heart care treatments with state-of-the-art technology and experienced doctors.</p>
     </div>
     <div className="card" style={{ flex: '0 0 auto' }}>
-      <img src="https://www.apolloadluxhospital.co/images/services/image29.jpeg" alt="Center 2" />
+      <Image src="https://www.apolloadluxhospital.co/images/services/image29.jpeg" alt="Center 2" />
       <h3>Critical care</h3>
       <p>Critical care services provide extreme care for critical injuries from accidents.</p>
     </div>
     <div className="card" style={{ flex: '0 0 auto' }}>
-      <img src="https://www.apolloadluxhospital.co/images/services/image21.jpeg" alt="Center 3" />
+      <Image src="https://www.apolloadluxhospital.co/images/services/image21.jpeg" alt="Center 3" />
       <h3>Orthopedics</h3>
       <p>Comprehensive orthopedic care, including advanced surgeries and treatments for musculoskeletal issues.</p>
     </div>
     <div className="card" style={{ flex: '0 0 auto' }}>
-      <img src="https://www.apolloadluxhospital.co/images/services/image47.jpeg" alt="Center 4" />
+      <Image src="https://www.apolloadluxhospital.co/images/services/image47.jpeg" alt="Center 4" />
       <h3>Pulmonology</h3>
       <p>Apollo Adlux Hospital is the trusted name for providing state-of-the-art services in the field of pulmonary medicine.</p>
     </div>
     <div className="card" style={{ flex: '0 0 auto' }}>
-      <img src="https://www.apolloadluxhospital.co/images/services/image33.jpeg" alt="Center 5" />
+      <Image src="https://www.apolloadluxhospital.co/images/services/image33.jpeg" alt="Center 5" />
       <h3>Neurosurgery</h3>
       <p>Advanced neurosurgery services, providing expert care for brain and spine conditions.</p>
     </div>
     <div className="card" style={{ flex: '0 0 auto' }}>
-      <img src="https://www.apolloadluxhospital.co/images/services/image33.jpeg" alt="Center 6" />
+      <Image src="https://www.apolloadluxhospital.co/images/services/image33.jpeg" alt="Center 6" />
       <h3>Nephrology</h3>
       <p>At Apollo Adlux Hospital’s Department of Nephrology, we understand that kidney disease can be a difficult journey.</p>
     </div>
@@ -192,11 +193,11 @@ const HomePage = () => {
         <div className="footer-section">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/services">Services</a></li>
-            <li><a href="/contact">Contact Us</a></li>
-            <li><a href="/patient">Appointment</a></li>
-            <li><a href="#">FAQs</a></li>
+            <li><Link href="/">Home</Link></li>
+            <li><Link href="/services">Services</Link></li>
+            <li><Link href="/contact">Contact Us</Link></li>
+            <li><Link href="/patient">Appointment</Link></li>
+            <li><Link href="#">FAQs</Link></li>
           </ul>
         </div>
         <div className="footer-section">
@@ -210,9 +211,9 @@ const HomePage = () => {
         <div className="footer-section">
           <h3>Follow Us</h3>
           <ul className="social-links">
-            <li><a href="#" className="social-icon"><FaFacebook/></a></li>
-            <li><a href="#" className="social-icon"><FaTwitter/></a></li>
-            <li><a href="#" className="social-icon"><FaInstagram/></a></li>
+            <li><Link href="#" className="social-icon"><FaFacebook/></Link></li>
+            <li><Link href="#" className="social-icon"><FaTwitter/></Link></li>
+            <li><Link href="#" className="social-icon"><FaInstagram/></Link></li>
           </ul>
         </div>
       </div>

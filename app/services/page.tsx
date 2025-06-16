@@ -2,6 +2,7 @@
 import Head from "next/head";
 import styled from "styled-components";
 import Link from 'next/link';
+import Image from 'next/image';
 import { FaHeartbeat, FaUserMd, FaHospital, FaStethoscope,FaEye, FaUser,FaFacebook, FaTwitter, FaInstagram,FaEdit } from "react-icons/fa";
 
 const Navbar = styled.nav`
@@ -162,7 +163,7 @@ export default function Services() {
     <div>
       <Navbar>
         <Logo>
-          <img src="https://www.apolloadluxhospital.co/assets/images/ApolloAdluxLogo.png" alt="logo" />
+          <Image src="https://www.apolloadluxhospital.co/assets/images/ApolloAdluxLogo.png" alt="logo" />
         </Logo>
         <NavLinks>
           <li>
@@ -263,7 +264,7 @@ export default function Services() {
 
 <div style={{ backgroundColor: "#ecf0f1", padding: "20px", borderRadius: "8px", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }}>
   <h3 style={{ fontSize: "1.8rem", color: "#1abc9c" }}>Gynecology</h3>
-  <p style={{ fontSize: "1rem", color: "#7f8c8d" }}>Comprehensive care for women's health, including routine check-ups and specialized treatments.</p>
+  <p style={{ fontSize: "1rem", color: "#7f8c8d" }}>Comprehensive care for women&#39;s health, including routine check-ups and specialized treatments.</p>
 </div>
 
 <div style={{ backgroundColor: "#ecf0f1", padding: "20px", borderRadius: "8px", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }}>

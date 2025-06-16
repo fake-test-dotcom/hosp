@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from "framer-motion";
 import { FaHeartbeat,FaEdit, FaUserMd, FaHospital,FaEye, FaStethoscope, FaUser, FaHospitalAlt, FaUsers, FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 
@@ -253,7 +254,7 @@ const About = () => {
       <LoadingOverlay>
         <div style={{ textAlign: "center" }}>
           <Logo>
-            <img src="https://www.apolloadluxhospital.co/assets/images/ApolloAdluxLogo.png" alt="Logo" />
+            <Image src="https://www.apolloadluxhospital.co/assets/images/ApolloAdluxLogo.png" alt="Logo" />
           </Logo>
           <Spinner style={{marginLeft: '20px'}} />
           <p style={{ color: "white", marginTop: "20px", fontSize: "18px" }}>Loading...</p>
@@ -267,7 +268,7 @@ const About = () => {
       {/* Navbar */}
       <Navbar>
         <Logo>
-          <img src="https://www.apolloadluxhospital.co/assets/images/ApolloAdluxLogo.png" alt="logo" />
+          <Image src="https://www.apolloadluxhospital.co/assets/images/ApolloAdluxLogo.png" alt="logo" />
         </Logo>
         <NavLinks>
           <Link href="/" passHref>

@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import Image from 'next/image';
 import { FaUser, FaLock, FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 
 export default function SignUp() {
@@ -121,7 +122,7 @@ export default function SignUp() {
 
   return (
     <div style={styles.mainContainer}>
-      <img
+      <Image
         src="https://www.apolloadluxhospital.co/assets/images/ApolloAdluxLogo.png"
         alt="Apollo Adlux Hospital Logo"
         style={styles.logo}
