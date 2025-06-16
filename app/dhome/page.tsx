@@ -2,7 +2,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
-import { FaHeartbeat, FaUserMd,FaSearch, FaHospital,FaEye,FaList , FaStethoscope, FaUser,FaFacebook,FaTwitter,FaInstagram,FaEdit } from 'react-icons/fa';
+import { FaHeartbeat, FaUserMd, FaHospital,FaEye, FaList,FaStethoscope, FaUser,FaFacebook,FaTwitter,FaInstagram,FaEdit } from 'react-icons/fa';
 // Styled Link component
 const StyledLink = styled.a`
   display: flex;
@@ -64,14 +64,12 @@ const HomePage = () => {
               <FaStethoscope style={{ fontSize: '20px', marginRight: '2px' }} />Services
             </StyledLink>
           </Link>      
-          <Link href="/search" passHref>   <StyledLink><FaSearch style={{ marginLeft: '-2px', fontSize:'20px',marginTop:'-2px'}} />Find a doctor </StyledLink></Link>
-
           <Link href="/register" passHref>   <StyledLink><FaEdit style={{ marginLeft: '-2px', fontSize:'20px',marginTop:'-2px'}} />Register </StyledLink></Link>
-          <Link href="/appopatient" passHref>
+          <Link href="/appointment" passHref>
             <StyledLink>
-              <FaList style={{ fontSize: '20px', marginRight: '2px' }} />My Appointments
+              <FaList style={{ fontSize: '20px', marginRight: '2px' }} />View Appointment
             </StyledLink>
-          </Link>
+          </Link>  
 <Link href="/reglist" passHref>
             <StyledLink>
               <FaEye style={{ fontSize: '20px', marginRight: '2px' }} />View Tables
